@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>03-mvc-1-start</display-name>
+  <welcome-file-list>    
+    <welcome-file>customer_main.jsp</welcome-file>    
+  </welcome-file-list>
+  <servlet>    
+    <servlet-name>commerceapp</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DistpatcherServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>commerceapp</servlet-name>
+    <url-pattern>/mvc/*</url-pattern>
+  </servlet-mapping>
+  <listener>
+  	<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  <context-param>
+  	<param-name>contextConfigLocation</param-name>
+  	<param-value>
+  		/WEB-INF/commerceapp-service.xml
+  		/WEB-INF/commerceapp-dao.xml
+  	</param-value>
+  </context-param>
+</web-app>
